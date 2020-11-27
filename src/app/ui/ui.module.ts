@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiComponent } from './ui/ui.component';
+import { UiComponent } from './components/ui/ui.component';
 import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -9,7 +10,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [UiComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
   exports: [UiComponent]
 })
