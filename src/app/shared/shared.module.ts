@@ -9,6 +9,7 @@ import { TableDarkComponent } from './components/table-dark/table-dark.component
 import { RouterModule } from '@angular/router';
 import { TemplatesModule } from '../templates/templates.module';
 import { TextModule } from '../text/text.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { TextModule } from '../text/text.module';
     TemplatesModule,
     TextModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
   exports: [
     IconsModule,
