@@ -1,0 +1,5 @@
+<app-template-a [title]="title" [subtitle]="subtitle">
+
+    <app-form-order *ngIf="order$ | async as order" [order]="order" (submitted)="update($event)"></app-form-order>
+
+</app-template-a>

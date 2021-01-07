@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
@@ -20,7 +20,10 @@ export class PageListOrdersComponent implements OnInit {
   public btnHref: BtnI;
   public btnAction: BtnI;
 
-  constructor(private orderService: OrdersService, public route: ActivatedRoute) { }
+  constructor(
+    private orderService: OrdersService,
+    public route: ActivatedRoute,
+    public router: Router) { }
 
   ngOnInit(): void {
     this.orderService.refresh$.next(true);
@@ -66,6 +69,10 @@ export class PageListOrdersComponent implements OnInit {
         this.orderService.refresh$.next(true);
       }
     )
+  }
+
+  public gotoEdit(item: Order) {
+    this.router.navigate(['orders', 'edit', item.id]);
   }
 
 }

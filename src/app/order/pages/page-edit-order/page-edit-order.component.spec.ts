@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAddOrderComponent } from './form-add-order.component';
+import { PageEditOrderComponent } from './page-edit-order.component';
 
-describe('FormAddOrderComponent', () => {
-  let component: FormAddOrderComponent;
-  let fixture: ComponentFixture<FormAddOrderComponent>;
+describe('PageEditOrderComponent', () => {
+  let component: PageEditOrderComponent;
+  let fixture: ComponentFixture<PageEditOrderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormAddOrderComponent ]
+      declarations: [ PageEditOrderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormAddOrderComponent);
+    fixture = TestBed.createComponent(PageEditOrderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
