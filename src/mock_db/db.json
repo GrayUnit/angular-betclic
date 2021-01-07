@@ -9,16 +9,6 @@
       "comment": "test",
       "client": "Christophe2",
       "id": 3
-    },
-    {
-      "tjmHt": 500,
-      "nbJours": 41,
-      "tva": 20,
-      "state": "CANCEL",
-      "typePresta": "TypeTest",
-      "comment": "comment test",
-      "client": "Christophe2",
-      "id": 4
     }
   ],
   "orders2": [

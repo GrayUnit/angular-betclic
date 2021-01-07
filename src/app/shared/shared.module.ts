@@ -19,6 +19,7 @@ import { TextModule } from '../text/text.module';
     IconsModule,
     TemplatesModule,
     TextModule,
+    RouterModule,
   ],
   exports: [
     IconsModule,
@@ -30,6 +31,7 @@ import { TextModule } from '../text/text.module';
     RouterModule,
     TemplatesModule,
     TextModule,
+    IconsModule,
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
@@ -19,9 +20,10 @@ export class PageListOrdersComponent implements OnInit {
   public btnHref: BtnI;
   public btnAction: BtnI;
 
-  constructor(private orderService: OrdersService) { }
+  constructor(private orderService: OrdersService, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.orderService.refresh$.next(true);
     this.collection$ = this.orderService.collection;
     this.headers = [
       'Type',
@@ -30,7 +32,8 @@ export class PageListOrdersComponent implements OnInit {
       'Tjm HT',
       'Total HT',
       'Total TTC',
-      'State'
+      'State',
+      'Actions'
     ];
     this.btnRoute = {
       label: 'Add an order',
@@ -55,6 +58,14 @@ export class PageListOrdersComponent implements OnInit {
 
   public openPopUp() {
     console.log('open popup');
+  }
+
+  public delete(item: Order) {
+    this.orderService.delete(item).subscribe(
+      (res) => {
+        this.orderService.refresh$.next(true);
+      }
+    )
   }
 
 }
