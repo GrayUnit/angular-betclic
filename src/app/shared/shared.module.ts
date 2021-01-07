@@ -4,11 +4,12 @@ import { IconsModule } from '../icons/icons.module';
 import { TableLightComponent } from './components/table-light/table-light.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { TotalPipe } from './pipes/total.pipe';
+import { StateDirective } from './directives/state.directive';
 
 
 
 @NgModule({
-  declarations: [TableLightComponent, BtnComponent, TotalPipe],
+  declarations: [TableLightComponent, BtnComponent, TotalPipe, StateDirective],
   imports: [
     CommonModule,
     IconsModule,
@@ -18,6 +19,7 @@ import { TotalPipe } from './pipes/total.pipe';
     TableLightComponent,
     BtnComponent,
     TotalPipe,
+    StateDirective,
   ]
 })
 export class SharedModule { }
