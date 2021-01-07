@@ -14,12 +14,12 @@ export class OrdersService {
   private urlApi = environment.urlApi;
   constructor(private http: HttpClient) {
     this.pCollection = this.http.get<Order[]>(`${this.urlApi}orders`).pipe(
-      map((tab) => {
-        return tab.map((obj) => {
-          return new Order(obj);
-        });
+      map((collection) => {
+        return collection.map((obj) => {
+          return new Order(obj)
+        })
       })
-    );  
+    ); 
   }
 
   get collection(): Observable<Order[]> {
